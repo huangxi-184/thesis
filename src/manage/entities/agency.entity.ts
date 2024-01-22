@@ -17,4 +17,10 @@ export class Agency {
         name: 'sortId',
     })
     sortId: number;
+
+    // 0: 正常 1: 禁用
+    @Column({
+        name: 'status',
+    })
+    status: number;
 }

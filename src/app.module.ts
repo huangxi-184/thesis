@@ -2,7 +2,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Agency } from './entities/agency.entity';
+import { Agency } from './manage/entities/agency.entity';
+import { ManageModule } from './manage/manage.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { Agency } from './entities/agency.entity';
         authPlugin: 'sha256_password',
       }
     }),
+    ManageModule,
   ],
   controllers: [AppController],
   providers: [AppService],
