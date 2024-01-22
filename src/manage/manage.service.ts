@@ -44,11 +44,12 @@ export class ManageService {
         }
         agencyEntity.name = agency.name
         agencyEntity.sortId = agency.sortId;
+        agencyEntity.status = agency.status;
         await this.agencyRepository.save(agencyEntity)
     }
 
     // 删除
     async deleteAgency({ id }) {
-        await this.agencyRepository.update(id, { status: 1 })
+        // await this.agencyRepository.delete(id)
     }
 }
